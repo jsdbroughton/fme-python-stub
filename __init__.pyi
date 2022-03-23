@@ -1,6 +1,6 @@
-
-
-
+import fmeobjects.features
+import fmeobjects.tools
+import fmeobjects.geometries
 
 # Versioning and metadata constants
 FME_ASSEMBLY_VERSION: str

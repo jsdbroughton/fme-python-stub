@@ -206,8 +206,14 @@ class FMEException:
 
 # Severity levels
 FME_INFORM: int
+"""Default: White"""
 FME_WARN: int
+"""Warning: Blue"""
 FME_ERROR: int
+"""Error: Red"""
 FME_FATAL: int
+"""Fatal Error: Red"""
 FME_STATISTIC: int
+"""Stats: White"""
 FME_STATUSREPORT: int
+"""Status: Not Printed"""

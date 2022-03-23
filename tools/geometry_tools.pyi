@@ -60,9 +60,7 @@ class FMEGeometryTools:
     This class provides the ability to modify FME Geometry."""
 
     def __init__(self) -> None: ...
-    def appendCurve(
-        self, destinationCurve: FMECurve or None, sourceCurve: FMECurve or None
-    ) -> FMECurve or None:
+    def appendCurve(self, destinationCurve: FMECurve | None, sourceCurve: FMECurve | None) -> FMECurve | None:
         """Appends the source curve to the destination curve.
 
         This will not merge curves but simply append them into an IFMEPath if
@@ -81,9 +79,7 @@ class FMEGeometryTools:
                 classes in the FMECurve inheritance graph. For example, a
                 FMEPath is returned if the geometry truly is a path.
         """
-    def applyTransformationToTextureCoordinates(
-        self, surface: FMESurface, applyOnlyIfShearExists: bool
-    ) -> None:
+    def applyTransformationToTextureCoordinates(self, surface: FMESurface, applyOnlyIfShearExists: bool) -> None:
         """Apply the transformation matrix of the texture to the texture coordinates
         if exists and that it does not have any shear if 'applyOnlyIfShearExists' is set to true.
 
@@ -95,9 +91,7 @@ class FMEGeometryTools:
             applyOnlyIfShearExists (bool): If true, the transformation is only
                 applied if the surface has a shear.
         """
-    def calculateVertexNormal(
-        self, repairOnlyMissing: bool, repairType: int, geom: FMEGeometry
-    ) -> None:
+    def calculateVertexNormal(self, repairOnlyMissing: bool, repairType: int, geom: FMEGeometry) -> None:
         """This method returns None if vertex normals are repaired on the geometry
         or if there is nothing to repair.
 
@@ -111,7 +105,7 @@ class FMEGeometryTools:
             repairType (int): Repair type, the only valid value is BY_FACE.
             geom (FMEGeometry):  The geometry to calculate the vertex normals for.
         """
-    def closeArcAsEllipse(self, arc: FMEArc) -> FMEEllipse or None:
+    def closeArcAsEllipse(self, arc: FMEArc) -> FMEEllipse | None:
         """This routine is to see if the current arc is closed.
 
         A closed arc is defined as one where the start and end points are equal.
@@ -125,7 +119,7 @@ class FMEGeometryTools:
         Returns:
             (FMEEllipse or None): The Arc closed as an ellipse or None
         """
-    def closeCurve(self, curve: FMECurve or None) -> FMECurve or None:
+    def closeCurve(self, curve: FMECurve | None) -> FMECurve | None:
         """This checks to see if the current curve is closed. A closed curve is
         defined as one where the start and end points are equal. If necessary
         this method will add a straight segment from the end point to the start
@@ -145,7 +139,7 @@ class FMEGeometryTools:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def closeCurve3D(self, curve: FMECurve or None, mode: int) -> FMECurve or None:
+    def closeCurve3D(self, curve: FMECurve | None, mode: int) -> FMECurve | None:
         """This function closes the curve in 3D if it is not already closed.
 
         If the curve is not 3D, it forces the curve to be 3D with default z value
@@ -179,7 +173,7 @@ class FMEGeometryTools:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def convertToLine(self, curve: FMECurve or None) -> FMELine or None:
+    def convertToLine(self, curve: FMECurve | None) -> FMELine | None:
         """Returns a line that is created from the given curve.
 
         If the curve is a FMELine, it will be returned. If it is a FMEArc, it will
@@ -208,9 +202,7 @@ class FMEGeometryTools:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def extendToCurve(
-        self, destinationCurve: FMECurve or None, sourceCurve: FMECurve or None
-    ) -> FMECurve or None:
+    def extendToCurve(self, destinationCurve: FMECurve | None, sourceCurve: FMECurve | None) -> FMECurve | None:
         """Extends the source curve to the destination curve.
 
         If one curve is a line or a path with a line at its end, and the other
@@ -235,9 +227,7 @@ class FMEGeometryTools:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def extendToPoint(
-        self, curve: FMECurve or None, point: FMEPoint or None
-    ) -> FMECurve or None:
+    def extendToPoint(self, curve: FMECurve | None, point: FMEPoint | None) -> FMECurve | None:
         """This method will extend the given curve to the given point.
 
         This method will add a straight segment from the curve's end point to the
@@ -315,9 +305,7 @@ class FMEGeometryTools:
         Returns:
             (int): The number of parts in the geometry.
         """
-    def join(
-        self, firstGeom: FMEGeometry, secondGeom: FMEGeometry, aggregatable: bool
-    ) -> FMEGeometry:
+    def join(self, firstGeom: FMEGeometry, secondGeom: FMEGeometry, aggregatable: bool) -> FMEGeometry:
         """This routine joins two geometries together.
 
         Options applying to joining will affect the result. Both geometries will
@@ -531,9 +519,7 @@ class FMEGeometryTools:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def rotate2D(
-        self, geometry: FMEGeometry, center: FMEPoint, angle: float
-    ) -> FMEGeometry:
+    def rotate2D(self, geometry: FMEGeometry, center: FMEPoint, angle: float) -> FMEGeometry:
         """The angle is CCW up from the horizontal and is measured in degrees.
 
         The returned geometry may or may not be the original object that was
@@ -554,9 +540,7 @@ class FMEGeometryTools:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def scale(
-        self, geometry: FMEGeometry, xScale: float, yScale: float, zScale: float
-    ) -> FMEGeometry:
+    def scale(self, geometry: FMEGeometry, xScale: float, yScale: float, zScale: float) -> FMEGeometry:
         """The 'zscale' is ignored if geometry is 2D.
 
         The returned geometry may or may not be the original object that was
@@ -636,9 +620,7 @@ class FMEGeometryTools:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def splitDoubleSidedSurface(
-        self, doubleSidedSurface: FMESurface
-    ) -> list[FMESurface]:
+    def splitDoubleSidedSurface(self, doubleSidedSurface: FMESurface) -> list[FMESurface]:
         """Takes a double-sided surface and splits it up into two single-sided
         surfaces of the same type.
 

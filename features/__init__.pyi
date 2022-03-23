@@ -84,9 +84,7 @@ class FMEFeature:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def changeCase(
-        self, changeOpt: int, matchExp: str or list[str], caseTpe: int
-    ) -> None:
+    def changeCase(self, changeOpt: int, matchExp: str | list[str], caseTpe: int) -> None:
         """Change the letter case of attribute names and values.
 
         Args:
@@ -190,9 +188,7 @@ class FMEFeature:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def convertPointsToArc(
-        self, radiusAttrName: str, startAngleAttrName: str, sweepAngleAttrName: str
-    ) -> None:
+    def convertPointsToArc(self, radiusAttrName: str, startAngleAttrName: str, sweepAngleAttrName: str) -> None:
         """Converts the feature into a point feature with attributes required to
         define it as an arc. If the feature has more than 3 points, the arc is
         approximated.
@@ -236,7 +232,7 @@ class FMEFeature:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def exportGeometryToOGCWKB(self, version: int) -> bytearray or bytes or None:
+    def exportGeometryToOGCWKB(self, version: int) -> bytearray | bytes | None:
         """Convert the geometry of the feature to the OGC Well Known Binary format.
 
         Args:
@@ -314,15 +310,8 @@ class FMEFeature:
         self,
         attrName: str,
         desiredType: type,
-        fallback: bool
-        or int
-        or float
-        or str
-        or bytes
-        or bytearray
-        or list[Any]
-        or None,  # ignore
-    ) -> bool or int or float or str or bytes or bytearray or list[Any] or None:
+        fallback: bool | int | float | str | bytes | bytearray | list[Any] | None,  # ignore
+    ) -> bool | int | float | str | bytes | bytearray | list[Any] | None:
         """Get the value of an attribute.
 
         Args:
@@ -343,9 +332,7 @@ class FMEFeature:
         """
     def getAttributeAsType(
         self, attrName: str, attrType: int, fallback: Any
-    ) -> bool or int or float or str or list[str] or bytearray or list[
-        bytearray
-    ] or bytes or list[bytes] or None:
+    ) -> bool | int | float | str | list[str] | bytearray | list[bytearray] | bytes | list[bytes] | None:
         """[DEPRECATED] Get the value of the named attribute, casted to the specified
         FME type, then to an appropriate python type.
 
@@ -374,9 +361,7 @@ class FMEFeature:
             FMEException: An exception is raised if there was a problem in retrieving
                 or converting the attribute value.
         """
-    def getAttributeNullMissingAndType(
-        self, attributeName: str
-    ) -> tuple[bool, bool, int]:
+    def getAttributeNullMissingAndType(self, attributeName: str) -> tuple[bool, bool, int]:
         """[DEPRECATED] This method returns a tuple of a boolean indicating if the
         attribute is null, a boolean indicating if the attribute is missing, and
         an integer representing the type of the attribute.
@@ -519,9 +504,7 @@ class FMEFeature:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def interpolateSpline(
-        self, numPointsPerSegment: int, calcPhantomPoints: bool
-    ) -> None:
+    def interpolateSpline(self, numPointsPerSegment: int, calcPhantomPoints: bool) -> None:
         """Perform interpolation on the feature.
 
         Args:
@@ -676,9 +659,7 @@ class FMEFeature:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def processFeature(
-        self, featureList: list[FMEFeature], paramList: list[str]
-    ) -> None:
+    def processFeature(self, featureList: list[FMEFeature], paramList: list[str]) -> None:
         """Perform some general processing operation on a list of features.
 
         The operation performed is governed by the contents of paramList.
@@ -781,7 +762,7 @@ class FMEFeature:
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def serialize(self, parameters: dict[str, str]) -> bytearray or bytes or None:
+    def serialize(self, parameters: dict[str, str]) -> bytearray | bytes | None:
         """Write the state of the FMEFeature to a string buffer.
 
         Args:
@@ -813,15 +794,7 @@ class FMEFeature:
     def setAttribute(
         self,
         attrName: str,
-        attrValue: bool
-        or int
-        or str
-        or list[str]
-        or float
-        or bytearray
-        or list[bytearray]
-        or bytes
-        or list[bytes],
+        attrValue: bool | int | str | list[str] | float | bytearray | list[bytearray] | bytes | list[bytes],
     ) -> None:
         """Set the value of an attribute.
 
@@ -905,7 +878,7 @@ class FMEFeature:
         Args:
             geomType (int): The geometry to set on the feature.
         """
-    def setSequencedAttribute(self, attrName: str, attrValue: str or list[str]) -> None:
+    def setSequencedAttribute(self, attrName: str, attrValue: str | list[str]) -> None:
         """Supply a new attribute for the feature, but in such a way that the sequence
         is remembered.
 

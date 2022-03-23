@@ -52,7 +52,7 @@ class FMETexture:
         Returns:
             tuple[float,float,float]: The border color, formatted (ddd) (r, g, b).
         """
-    def getCenter(self) -> tuple[float, float] or None:
+    def getCenter(self) -> tuple[float, float] | None:
         """This routine retrieves the center associated with the texture.
 
         This will return None if the center is the default center of (0,0).
@@ -61,7 +61,7 @@ class FMETexture:
         Returns:
             tuple[float,float]: The center, formatted (dd) (u, v).
         """
-    def getOffset(self) -> tuple[float, float] or None:
+    def getOffset(self) -> tuple[float, float] | None:
         """This routine retrieves the offset associated with the texture.
 
         This will return None if the offset is the default offset of (0,0).
@@ -70,7 +70,7 @@ class FMETexture:
         Returns:
             tuple[float,float]: The offset, formatted (dd) (u, v).
         """
-    def getRotation(self) -> int or None:
+    def getRotation(self) -> int | None:
         """This routine retrieves the rotation angle associated with the texture.
 
         The angle is stored in degrees CCW from the x-axis, and is by default 0.
@@ -80,7 +80,7 @@ class FMETexture:
         Returns:
             int: The rotation, in degrees.
         """
-    def getScaling(self) -> tuple[float, float] or None:
+    def getScaling(self) -> tuple[float, float] | None:
         """This routine retrieves the scaling factors associated with the texture.
 
         This will return None if the scaling is the default scaling of (1,1).
@@ -88,7 +88,7 @@ class FMETexture:
         Returns:
             tuple[float,float]: The scaling factors, formatted (dd) (u, v), or None.
         """
-    def getShear(self) -> tuple[float, float] or None:
+    def getShear(self) -> tuple[float, float] | None:
         """This routine retrieves the shear factors associated with the texture.
 
         Shearing is centered according to the Center variable. This will return
@@ -236,14 +236,14 @@ class FMELibraryIterator:
 
     def __init__(self) -> None:
         """Constructor for FMELibraryIterator."""
-    def getAppearance(self) -> FMEAppearance or None:
+    def getAppearance(self) -> FMEAppearance | None:
         """This method returns a copy of the current shared object as an appearance
         if getType() returns FME_LIB_APPEARANCE. Otherwise, it returns None.
 
         Returns:
             FMEAppearance: The current object's appearance.
         """
-    def getAsTexture(self) -> FMETexture or None:
+    def getAsTexture(self) -> FMETexture | None:
         """This method returns a copy of the current shared object as a texture
         if getType() returns FME_LIB_TEXTURE. Otherwise, it returns None.
 
@@ -365,7 +365,7 @@ class FMELibrary:
         Raises:
             FMEException: If there is an error deleting the texture.
         """
-    def getAppearanceCopy(self, appearanceReference: int) -> FMEAppearance or None:
+    def getAppearanceCopy(self, appearanceReference: int) -> FMEAppearance | None:
         """This routine returns a copy of the referenced Appearance object from the Library.
 
         If there is no such Appearance in the Library, None is returned.
@@ -376,9 +376,7 @@ class FMELibrary:
         Returns:
             FMEAppearance: The copy of the appearance.
         """
-    def getGeometryDefinitionCopy(
-        self, geometryDefinitionReference: int
-    ) -> FMEGeometry or None:
+    def getGeometryDefinitionCopy(self, geometryDefinitionReference: int) -> FMEGeometry or None:
         """This routine returns a copy of the referenced Geometry Definition object from the Library.
 
         If there is no such Geometry Definition in the Library, None is returned.
@@ -389,7 +387,7 @@ class FMELibrary:
         Returns:
             FMEGeometry: The copy of the geometry definition.
         """
-    def getTextureCopy(self, textureReference: int) -> FMETexture or None:
+    def getTextureCopy(self, textureReference: int) -> FMETexture | None:
         """This routine returns a copy of the referenced Texture object from the Library.
 
         If there is no such Texture in the Library, None is returned.
@@ -429,9 +427,7 @@ class FMELibrary:
         Raises:
             FMEException: If there is an error determining the Library Type.
         """
-    def replaceAppearance(
-        self, appearanceReference: int, newAppearance: FMEAppearance
-    ) -> None:
+    def replaceAppearance(self, appearanceReference: int, newAppearance: FMEAppearance) -> None:
         """Replaces the Appearance with a new one at index = 'appearanceReference'.
 
         A FMEException is thrown if 'newAppearance' is None, 'appearanceReference'
@@ -446,9 +442,7 @@ class FMELibrary:
         Raises:
             FMEException: If there is an error replacing the appearance.
         """
-    def replaceGeometryDefinition(
-        self, geometryDefinitionReference: int, newGeometryDefinition: FMEGeometry
-    ) -> None:
+    def replaceGeometryDefinition(self, geometryDefinitionReference: int, newGeometryDefinition: FMEGeometry) -> None:
         """Replaces the Geometry Definition with a new one at index = 'geometryDefinitionReference'.
 
         A FMEException is thrown if 'newGeometryDefinition' is None, 'geometryDefinitionReference'
@@ -484,7 +478,7 @@ class FMEAppearance:
 
     def __init__(self) -> None:
         """Create an instance of a blank appearance object"""
-    def getAlpha(self) -> float or None:
+    def getAlpha(self) -> float | None:
         """This routine retrieves the alpha (1-transparency) of this Appearance.
 
         This will return None if it did not have a alpha associated with it.
@@ -492,7 +486,7 @@ class FMEAppearance:
         Returns:
             float: The alpha value
         """
-    def getColorAmbient(self) -> tuple[float, float, float] or None:
+    def getColorAmbient(self) -> tuple[float, float, float] | None:
         """This routine retrieves the ambient color of this Appearance as r g b values between 0.0 and 1.0.
 
         This will return None if it did not have an ambient color associated with it.
@@ -500,7 +494,7 @@ class FMEAppearance:
         Returns:
             tuple[float,float,float]: A tuple of the r g b values of the ambient color.
         """
-    def getColorDiffuse(self) -> tuple[float, float, float] or None:
+    def getColorDiffuse(self) -> tuple[float, float, float] | None:
         """This routine retrieves the diffuse color of this Appearance as r g b values between 0.0 and 1.0.
 
         This will return None if it did not have a diffuse color associated with it.
@@ -508,7 +502,7 @@ class FMEAppearance:
         Returns:
             tuple[float,float,float]: A tuple of the r g b values of the diffuse color.
         """
-    def getColorEmissive(self) -> tuple[float, float, float] or None:
+    def getColorEmissive(self) -> tuple[float, float, float] | None:
         """This routine retrieves the emissive color of this Appearance as r g b values between 0.0 and 1.0.
 
         This will return None if it did not have an emissive color associated with it.
@@ -516,7 +510,7 @@ class FMEAppearance:
         Returns:
             tuple[float,float,float]: A tuple of the r g b values of the emissive color.
         """
-    def getColorSpecular(self) -> tuple[float, float, float] or None:
+    def getColorSpecular(self) -> tuple[float, float, float] | None:
         """This routine retrieves the specular color of this Appearance as r g b values between 0.0 and 1.0.
 
         This will return None if it did not have a specular color associated with it.
@@ -524,7 +518,7 @@ class FMEAppearance:
         Returns:
             tuple[float,float,float]: A tuple of the r g b values of the specular color.
         """
-    def getMapperReference(self, mapperType: int) -> int or None:
+    def getMapperReference(self, mapperType: int) -> int | None:
         """This routine retrieves the texture reference of 'mapperType' of this Appearance.
 
         This will return None if it did not have a mapper of mapper type associated
@@ -542,13 +536,13 @@ class FMEAppearance:
         Returns:
             int: The texture reference of 'mapperType' of this Appearance.
         """
-    def getName(self) -> text_type or None:
+    def getName(self) -> text_type | None:
         """This routine retrieves the 'name' of this Appearance as a six.text_type. This will return None if it did not have a name associated with it.
 
         Returns:
             str: The name of this Appearance.
         """
-    def getShininess(self) -> float or None:
+    def getShininess(self) -> float | None:
         """This routine retrieves the shininess of this Appearance.
 
         This will return None if it did not have a shininess associated with it.
@@ -556,7 +550,7 @@ class FMEAppearance:
         Returns:
             float: The shininess of this Appearance.
         """
-    def getTextureReference(self) -> int or None:
+    def getTextureReference(self) -> int | None:
         """This routine retrieves the main texture reference of this Appearance.
 
         This will return None if it did not have a texture reference associated with it.

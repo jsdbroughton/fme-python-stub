@@ -58,10 +58,10 @@ class FMEArea(FMEGeometry):
     def force3D(self, newZ: float) -> None: ...
     def getArea(self) -> float: ...
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -200,7 +200,7 @@ class FMEArea(FMEGeometry):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -264,8 +264,8 @@ class FMEMultiArea(FMEGeometry):
     def force3D(self, newZ: float) -> None: ...
     def getArea(self) -> float: ...
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
-    def getPartAt(self, index: int) -> FMEArea or None:
+    def getName(self) -> text_type | None: ...
+    def getPartAt(self, index: int) -> FMEArea | None:
         """Returns the area at the specified index.
 
         Args:
@@ -279,7 +279,7 @@ class FMEMultiArea(FMEGeometry):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -353,7 +353,7 @@ class FMEMultiArea(FMEGeometry):
         Raise:
           FMEException: An exception is raised if an error occurred.
         """
-    def removeLastPart(self) -> FMEArea or None:
+    def removeLastPart(self) -> FMEArea | None:
         """This removes and returns the last area of the MultiArea.
 
         If there are no areas in the MultiArea, it will return None.
@@ -395,7 +395,7 @@ class FMEMultiArea(FMEGeometry):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -491,9 +491,7 @@ class FMEDonut(FMEArea):
     def force2D(self) -> None: ...
     def force3D(self, newZ: float) -> None: ...
     def getArea(self) -> float: ...
-    def getInnerBoundaryAsCurveAt(
-        self, index: int
-    ) -> FMEPath or FMEArc or FMELine or None:
+    def getInnerBoundaryAsCurveAt(self, index: int) -> FMEPath | FMEArc | FMELine | None:
         """Retrieves the inner boundary at the specified index.
 
         If the index is out of bounds, it will return None.
@@ -510,9 +508,7 @@ class FMEDonut(FMEArea):
         Raises:
           FMEException: An exception is raised if an error occurred.
         """
-    def getInnerBoundarAsSimpleAreaAt(
-        self, index: int
-    ) -> FMEPolygon or FMEEllipse or None:
+    def getInnerBoundarAsSimpleAreaAt(self, index: int) -> FMEPolygon | FMEEllipse | None:
         """Retrieves the inner boundary at 'index' as a FMESimpleArea.
 
         Args:
@@ -528,8 +524,8 @@ class FMEDonut(FMEArea):
           FMEException: An exception is raised if an error occurred.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
-    def getOuterBoundaryAsCurve(self) -> FMEPath or FMEArc or FMELine:
+    def getName(self) -> text_type | None: ...
+    def getOuterBoundaryAsCurve(self) -> FMEPath | FMEArc | FMELine:
         """Retrieves the outer boundary as a FMECurve.
 
         Returns:
@@ -540,7 +536,7 @@ class FMEDonut(FMEArea):
         Raises:
           FMEException: An exception is raised if an error occurred.
         """
-    def getOuterBoundaryAsSimpleArea(self) -> FMEPolygon or FMEEllipse:
+    def getOuterBoundaryAsSimpleArea(self) -> FMEPolygon | FMEEllipse:
         """Retrieves the outer boundary as a FMESimpleArea.
 
         Returns:
@@ -553,7 +549,7 @@ class FMEDonut(FMEArea):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -585,7 +581,7 @@ class FMEDonut(FMEArea):
     def offset(self, offsetPoint: FMEPoint) -> None: ...
     def orient(self, rightOrLeft: int) -> None: ...
     def removeDuplicates(self, checkZ: bool) -> None: ...
-    def removeLastInnerBoundaryAsCurve(self) -> FMEPath or FMEArc or FMELine:
+    def removeLastInnerBoundaryAsCurve(self) -> FMEPath | FMEArc | FMELine:
         """Removes and returns the last inner boundary as a FMECurve.
 
         Returns:
@@ -636,7 +632,7 @@ class FMEDonut(FMEArea):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -673,7 +669,7 @@ class FMESimpleArea(FMEArea):
     def force2D(self) -> None: ...
     def force3D(self, newZ: float) -> None: ...
     def getArea(self) -> float: ...
-    def getBoundaryAsCurve(self) -> FMEPath or FMEArc or FMELine:
+    def getBoundaryAsCurve(self) -> FMEPath | FMEArc | FMELine:
         """Returns the curve that defines the boundary of the area.
 
         Returns:
@@ -681,10 +677,10 @@ class FMESimpleArea(FMEArea):
               boundary of the area.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -717,7 +713,7 @@ class FMESimpleArea(FMEArea):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -809,28 +805,28 @@ class FMEEllipse(FMESimpleArea):
     def force2D(self) -> None: ...
     def force3D(self, newZ: float) -> None: ...
     def getArea(self) -> float: ...
-    def getAsLine(self) -> FMELine or None:
+    def getAsLine(self) -> FMELine | None:
         """Returns the ellipse as a line.
 
         Returns:
           (FMELine): The line representing the ellipse or None if the ellipse
               cannot be returned as a line.
         """
-    def getBoundaryAsArc(self) -> FMEArc or None:
+    def getBoundaryAsArc(self) -> FMEArc | None:
         """Returns the ellipse as an arc.
 
         Returns:
           (FMEArc): The arc representing the ellipse or None if the ellipse
               cannot be returned as an arc.
         """
-    def getBoundaryAsCurve(self) -> FMEPath or FMEArc or FMELine:
+    def getBoundaryAsCurve(self) -> FMEPath | FMEArc | FMELine:
         """Returns the ellipse as a curve.
 
         Returns:
           (FMEPath or FMEArc or FMELine): The curve representing the ellipse.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getPrimaryRadius(self) -> float:
         """This gets the primary radius of the ellipse.
 
@@ -857,7 +853,7 @@ class FMEEllipse(FMESimpleArea):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -919,7 +915,7 @@ class FMEEllipse(FMESimpleArea):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -977,12 +973,12 @@ class FMEPolygon(FMESimpleArea):
     def force2D(self) -> None: ...
     def force3D(self, newZ: float) -> None: ...
     def getArea(self) -> float: ...
-    def getBoundaryAsCurve(self) -> FMEPath or FMEArc or FMELine: ...
+    def getBoundaryAsCurve(self) -> FMEPath | FMEArc | FMELine: ...
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -1016,6 +1012,6 @@ class FMEPolygon(FMESimpleArea):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...

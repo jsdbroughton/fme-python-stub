@@ -48,9 +48,7 @@ class FMETile:
         Returns:
             list[bytearray]: The data values of the tile.
         """
-    def getDataAsStringArray(
-        self, startRow: int, startCol: int, numRows: int, numCols: int
-    ) -> list[str]:
+    def getDataAsStringArray(self, startRow: int, startCol: int, numRows: int, numCols: int) -> list[str]:
         """Get a list that contains values of the tiles. One string is added to
         the list for each cell in the specified area.
 

@@ -59,7 +59,7 @@ class FMESurface(FMEGeometry, AppearanceMixin, OrientMixin, TransformMixin):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsWireFrame(self) -> FMEMultiCurve or None:
+    def getAsWireFrame(self) -> FMEMultiCurve | None:
         """Returns the wireframe of the surface as a FMEMultiCurve.
 
         None is returned if a wireframe cannot be generated.
@@ -68,10 +68,10 @@ class FMESurface(FMEGeometry, AppearanceMixin, OrientMixin, TransformMixin):
             (FMEMultiCurve): The wireframe of the surface as a FMEMultiCurve.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -154,7 +154,7 @@ class FMESurface(FMEGeometry, AppearanceMixin, OrientMixin, TransformMixin):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def sideExists(self, front: bool) -> bool:
@@ -240,7 +240,7 @@ class FMEMultiSurface(FMEGeometry, AppearanceMixin, TransformMixin):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsWireFrame(self) -> FMEMultiCurve or None:
+    def getAsWireFrame(self) -> FMEMultiCurve | None:
         """This method returns a wireframe representation of the MultiSurface.
 
         Returns:
@@ -252,8 +252,8 @@ class FMEMultiSurface(FMEGeometry, AppearanceMixin, TransformMixin):
                 creating the multi curve Python object.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
-    def getPartAt(self, index: int) -> FMESurface or None:
+    def getName(self) -> text_type | None: ...
+    def getPartAt(self, index: int) -> FMESurface | None:
         """This method returns the surface at the specified index.
 
         None is returned if the index is out of range.
@@ -272,7 +272,7 @@ class FMEMultiSurface(FMEGeometry, AppearanceMixin, TransformMixin):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -360,7 +360,7 @@ class FMEMultiSurface(FMEGeometry, AppearanceMixin, TransformMixin):
                 should be retrieved for the front or back of the multisurface.
 
         """
-    def removeLastPart(self) -> FMESurface or None:
+    def removeLastPart(self) -> FMESurface | None:
         """This method removes the last part from this MultiSurface.
 
         Returns:
@@ -388,7 +388,7 @@ class FMEMultiSurface(FMEGeometry, AppearanceMixin, TransformMixin):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -465,13 +465,13 @@ class FMECompositeSurface(FMESurface):
     def force2D(self) -> None: ...
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
-    def getAsWireFrame(self) -> FMEMultiCurve or None: ...
+    def getAsWireFrame(self) -> FMEMultiCurve | None: ...
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getPartAt(self, index: int) -> FMESurface: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -497,7 +497,7 @@ class FMECompositeSurface(FMESurface):
         """
     def offset(self, offsetPoint: FMEPoint) -> None: ...
     def orient(self) -> None: ...
-    def removeEndPart(self) -> FMESurface or None:
+    def removeEndPart(self) -> FMESurface | None:
         """This method removes the last part from this composite surface.
 
         If there are no surfaces in the composite surface, it will return None.
@@ -527,7 +527,7 @@ class FMECompositeSurface(FMESurface):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def sideExists(self, front: bool) -> bool: ...
@@ -572,12 +572,12 @@ class FMESimpleSurface(FMESurface):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsWireFrame(self) -> FMEMultiCurve or None: ...
+    def getAsWireFrame(self) -> FMEMultiCurve | None: ...
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -609,7 +609,7 @@ class FMESimpleSurface(FMESurface):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def sideExists(self, front: bool) -> bool: ...
@@ -700,9 +700,7 @@ class FMEFace(FMESimpleSurface):
             (FMEFace): An instance of a Face geometry object.
         """
     @overload
-    def __init__(
-        self, points: list[tuple[float]], mode: int, matrix: list[list[float]]
-    ) -> None:
+    def __init__(self, points: list[tuple[float]], mode: int, matrix: list[list[float]]) -> None:
         """Creates a face from the list of points passed in with the specified transformation matrix .
 
         Args:
@@ -739,9 +737,7 @@ class FMEFace(FMESimpleSurface):
             closeMode (int): The close mode. Must be either FME_CLOSE_3D_AVERAGE_MODE,
                 FME_CLOSE_3D_EXTEND_MODE, or FME_CLOSE_3D_EXTEND_OR_AVERAGE_Z_MODE.
         """
-    def addInnerBoundarySimpleArea(
-        self, innerBoundary: FMEArea, closeMode: int
-    ) -> None:
+    def addInnerBoundarySimpleArea(self, innerBoundary: FMEArea, closeMode: int) -> None:
         """Adds an inner-boundary area to this face, represented by the specified simple area.
 
         Args:
@@ -795,9 +791,9 @@ class FMEFace(FMESimpleSurface):
             in the FMEArea inheritance graph. For example, a FMEPolygon is
             returned if the geometry truly is a polygon.
         """
-    def getAsWireFrame(self) -> FMEMultiCurve or None: ...
+    def getAsWireFrame(self) -> FMEMultiCurve | None: ...
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getNormal(self) -> tuple[float, float, float]:
         """Returns the normal vector of this face, normalized to the unit length.
         The returned vector is computed using Newell's method on the vertices
@@ -809,7 +805,7 @@ class FMEFace(FMESimpleSurface):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -906,7 +902,7 @@ class FMEFace(FMESimpleSurface):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def setTransformationMatrix(self, matrix: list[list[float]]) -> None:
@@ -941,9 +937,7 @@ class FMERectangleFace(FMESimpleSurface):
           (FMERectangleFace): The newly created FMERectangleFace object.
         """
     @overload
-    def __init__(
-        self, coordinates: tuple[float, float, float, float, float, float]
-    ) -> None:
+    def __init__(self, coordinates: tuple[float, float, float, float, float, float]) -> None:
         """The rectangle has to be parallel to a coordinate plane
         (i.e one of XY, XZ, or YZ plane).
 
@@ -1026,7 +1020,7 @@ class FMERectangleFace(FMESimpleSurface):
         Returns:
           (FMEFace): The newly created FMEFace object.
         """
-    def getAsWireFrame(self) -> FMEMultiCurve or None: ...
+    def getAsWireFrame(self) -> FMEMultiCurve | None: ...
     def getBoundaryAsLine(self) -> FMELine:
         """Return a copy of this rectangle's boundary as a line.
 
@@ -1048,10 +1042,10 @@ class FMERectangleFace(FMESimpleSurface):
           (tuple[float]): The coordinate value of the point.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
     def getTransformationMatrix(self) -> list[list[float]]:
@@ -1115,7 +1109,7 @@ class FMERectangleFace(FMESimpleSurface):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def setTransformationMatrix(self, matrix: list[list[float]]) -> None:
@@ -1155,8 +1149,8 @@ class FMEMesh(FMESimpleSurface):
         self,
         appearanceReference: int,
         vertexIndices: list[int],
-        vertexNormalIndices: list[int] or None,
-        textureCoordinateIndices: list[int] or None,
+        vertexNormalIndices: list[int] | None,
+        textureCoordinateIndices: list[int] | None,
     ) -> bool:
         """This routine adds a new mesh part to the mesh.
 
@@ -1188,9 +1182,9 @@ class FMEMesh(FMESimpleSurface):
         frontAppRef: int,
         backAppRef: int,
         vertexIndices: list[int],
-        vertexNormalIndices: list[int] or None,
-        frontTextCoordIndices: list[int] or None,
-        backTextCoordIndices: list[int] or None,
+        vertexNormalIndices: list[int] | None,
+        frontTextCoordIndices: list[int] | None,
+        backTextCoordIndices: list[int] | None,
     ) -> bool:
         """This routine extends the functionality of addMeshPart(), allowing
         double-sided mesh parts to be added.
@@ -1259,9 +1253,7 @@ class FMEMesh(FMESimpleSurface):
             y (float): The Y coordinate.
             z (float): The Z coordinate.
         """
-    def appendVertexColored(
-        self, x: float, y: float, z: float, r: float, g: float, b: float
-    ) -> None:
+    def appendVertexColored(self, x: float, y: float, z: float, r: float, g: float, b: float) -> None:
         """Appends the point to the end of the vertex list using color information
         provided.
 
@@ -1301,9 +1293,7 @@ class FMEMesh(FMESimpleSurface):
             points (list[tuple[float]]): The list of vertices to be added.
                 The vertices are represented as (x, y, z) tuples.
         """
-    def appendVerticesColored(
-        self, pointsColorsAndHasColor: list[tuple[float, bool]]
-    ) -> None:
+    def appendVerticesColored(self, pointsColorsAndHasColor: list[tuple[float, bool]]) -> None:
         """Appends the vertices to the end of the vertex list using color
         information provided.
 
@@ -1350,7 +1340,7 @@ class FMEMesh(FMESimpleSurface):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsCompositeSurface(self) -> FMECompositeSurface or None:
+    def getAsCompositeSurface(self) -> FMECompositeSurface | None:
         """Returns a composite surface representation of this mesh.
 
         None is returned when an error is encountered.
@@ -1359,7 +1349,7 @@ class FMEMesh(FMESimpleSurface):
             (FMECompositeSurface or None): Returns a composite surface
                 representation of this mesh or none.
         """
-    def getAsMultiSurface(self) -> FMEMultiSurface or None:
+    def getAsMultiSurface(self) -> FMEMultiSurface | None:
         """Returns a multi-surface representation of this mesh.
 
         None is returned when an error is encountered.
@@ -1368,10 +1358,10 @@ class FMEMesh(FMESimpleSurface):
             (FMEMultiSurface or None): Returns a multi-surface representation
                 of this mesh or none.
         """
-    def getAsWireFrame(self) -> FMEMultiCurve or None: ...
+    def getAsWireFrame(self) -> FMEMultiCurve | None: ...
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
-    def getTextureCoordinateAt(self, index: int) -> tuple[float] or None:
+    def getName(self) -> text_type | None: ...
+    def getTextureCoordinateAt(self, index: int) -> tuple[float] | None:
         """Retrieve the texture coordinate at the specified index.
 
         Only components of the texture coordinate that return True from
@@ -1403,7 +1393,7 @@ class FMEMesh(FMESimpleSurface):
     def getTrait(
         self,
         traitName: str,
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -1418,7 +1408,7 @@ class FMEMesh(FMESimpleSurface):
             (list[list[float]]): The mesh's tranformation matrix, formatted
                 [[dddd][dddd][dddd]].
         """
-    def getVertexAt(self, index: int) -> tuple[float] or None:
+    def getVertexAt(self, index: int) -> tuple[float] | None:
         """Retrieve the vertex, in global coordinates
 
         (i.e., the transformation matrix is applied, if it exists), at the
@@ -1434,7 +1424,7 @@ class FMEMesh(FMESimpleSurface):
         Raises:
             FMEException: An error occurred.
         """
-    def getVertexColorAt(self, index: int) -> tuple[float] or None:
+    def getVertexColorAt(self, index: int) -> tuple[float] | None:
         """Retrieves the vertex color at the specified index.
 
         Raises an FMEException when a valid color does not exist at the
@@ -1712,7 +1702,7 @@ class FMEMesh(FMESimpleSurface):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def setTransformationMatrix(self, matrix: list[list[float]]) -> None:
@@ -1755,7 +1745,7 @@ class FMEMeshPartIterator:
             FMEException: An exception is raised if this mesh part iterator is
             not associated with a geometry instance.
         """
-    def getTextureCoordinateIndices(self, front: bool) -> list[int] or None:
+    def getTextureCoordinateIndices(self, front: bool) -> list[int] | None:
         """This method returns the texture coordinate indices associated with this mesh part iterator.
 
         The front parameter controls whether this query should return the front
@@ -1768,13 +1758,13 @@ class FMEMeshPartIterator:
         Returns:
             (list[int]): The texture coordinate indices or None if a problem occurred.
         """
-    def getVertexIndices(self) -> list[int] or None:
+    def getVertexIndices(self) -> list[int] | None:
         """Returns the vertex indices in the current mesh part via a list of ints.
 
         Returns:
             (list[int]): The vertex indices or None if a problem occurred.
         """
-    def getVertexNormalIndices(self) -> list[int] or None:
+    def getVertexNormalIndices(self) -> list[int] | None:
         """Returns the vertex normal indices in the current mesh part via a list of ints.
 
         Returns:
@@ -1914,7 +1904,7 @@ class FMETriangleFan(FMESimpleSurface):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsFaceAt(self, index: int) -> FMEFace or None:
+    def getAsFaceAt(self, index: int) -> FMEFace | None:
         """Returns a triangular face defined by this triangle fan.
 
         The index indicates the specific triangular face to return. In particular,
@@ -1928,7 +1918,7 @@ class FMETriangleFan(FMESimpleSurface):
         Returns:
           (FMEFace): A copy of a triangular face defined by this triangle fan.
         """
-    def getAsWireFrame(self) -> FMEMultiCurve or None: ...
+    def getAsWireFrame(self) -> FMEMultiCurve | None: ...
     def getMeasureNames(self) -> tuple[str]: ...
     def getMeasureValueAt(self, index: int, measureName: str) -> float:
         """Get the value of the default measure at the 'index'.
@@ -1962,7 +1952,7 @@ class FMETriangleFan(FMESimpleSurface):
         Raises:
           FMEException: An exception is raised if an error occurred
         """
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getPointAtXYZ(self, index: int) -> tuple[float]:
         """Gets a coordinate of this triangle fan at the specified index.
 
@@ -1999,7 +1989,7 @@ class FMETriangleFan(FMESimpleSurface):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -2047,9 +2037,7 @@ class FMETriangleFan(FMESimpleSurface):
           measureName (str): Optional) The name of the measure whose value is to
           be set, or created.
         """
-    def setMeasureAt(
-        self, index: int, measureValues: list[float], measureName: str
-    ) -> None:
+    def setMeasureAt(self, index: int, measureValues: list[float], measureName: str) -> None:
         """Set the default measure of the point at 'index' to the given 'measureValue'.
 
         If 'measureName' is supplied, this method sets the given measure of the
@@ -2070,7 +2058,7 @@ class FMETriangleFan(FMESimpleSurface):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def sideExists(self, front: bool) -> bool: ...
@@ -2157,7 +2145,7 @@ class FMETriangleStrip(FMESimpleSurface):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsFaceAt(self, index: int) -> FMEFace or None:
+    def getAsFaceAt(self, index: int) -> FMEFace | None:
         """Returns the face at the given index.
 
         Args:
@@ -2166,7 +2154,7 @@ class FMETriangleStrip(FMESimpleSurface):
         Returns:
           (FMEFace): A copy of a triangular face defined by this triangle strip.
         """
-    def getAsWireFrame(self) -> FMEMultiCurve or None: ...
+    def getAsWireFrame(self) -> FMEMultiCurve | None: ...
     def getMeasureNames(self) -> tuple[str]: ...
     def getMeasureValueAt(self, index: int, measureName: str) -> float:
         """Get the value of the default measure at the 'index'.
@@ -2197,7 +2185,7 @@ class FMETriangleStrip(FMESimpleSurface):
         Raises:
           FMEException: An exception is raised if an error occurred
         """
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getPointAtXYZ(self, index: int) -> tuple[float]:
         """Gets a coordinate of this triangle strip at the specified index.
 
@@ -2233,7 +2221,7 @@ class FMETriangleStrip(FMESimpleSurface):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -2310,7 +2298,7 @@ class FMETriangleStrip(FMESimpleSurface):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def sideExists(self, front: bool) -> bool: ...

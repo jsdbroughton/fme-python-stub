@@ -55,7 +55,7 @@ class FMECSGSolidIterator:
         Returns:
             int: Returns a valid CSG Boolean Operator.
         """
-    def getPartInLocalCoordinates(self) -> FMESolid or None:
+    def getPartInLocalCoordinates(self) -> FMESolid | None:
         """This method returns the same solid as next() but if the CSG solid has
         a transformation matrix, the matrix is NOT applied to the leaf solid when
         returned.
@@ -153,7 +153,7 @@ class FMEMultiSolid(FMEGeometry, AppearanceMixin, TransformMixin):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsWireFrame(self) -> FMEMultiCurve or None:
+    def getAsWireFrame(self) -> FMEMultiCurve | None:
         """Returns the wireframe of the MultiSolid as a FMEMultiCurve.
 
         None is returned if a wireframe cannot be generated.
@@ -162,8 +162,8 @@ class FMEMultiSolid(FMEGeometry, AppearanceMixin, TransformMixin):
             FMEMultiCurve: Returns the solid as a wireframe.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
-    def getPartAt(self, index: int) -> FMESolid or None:
+    def getName(self) -> text_type | None: ...
+    def getPartAt(self, index: int) -> FMESolid | None:
         """Returns the solid at the given index.
 
         Args:
@@ -180,7 +180,7 @@ class FMEMultiSolid(FMEGeometry, AppearanceMixin, TransformMixin):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -196,7 +196,7 @@ class FMEMultiSolid(FMEGeometry, AppearanceMixin, TransformMixin):
             int: The number of parts in the MultiSolid.
         """
     def offset(self, offsetPoint: FMEPoint) -> None: ...
-    def removeLastPart(self) -> FMESolid or None:
+    def removeLastPart(self) -> FMESolid | None:
         """This removes and returns the last solid of the MultiSolid.
 
         If there are no solids in the MultiSolid, it will return None.
@@ -226,7 +226,7 @@ class FMEMultiSolid(FMEGeometry, AppearanceMixin, TransformMixin):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -297,7 +297,7 @@ class FMECompositeSolid(FMESolid, AppearanceMixin, TransformMixin, OrientMixin):
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsWireFrame(self) -> FMEMultiCurve or None:
+    def getAsWireFrame(self) -> FMEMultiCurve | None:
         """Returns the wireframe of the solid as a FMEMultiCurve.
 
         None is returned if a wireframe cannot be generated.
@@ -306,8 +306,8 @@ class FMECompositeSolid(FMESolid, AppearanceMixin, TransformMixin, OrientMixin):
             FMEMultiCurve: The wireframe representation of this solid.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
-    def getPartAt(self, index: int) -> FMESimpleSolid or None:
+    def getName(self) -> text_type | None: ...
+    def getPartAt(self, index: int) -> FMESimpleSolid | None:
         """Returns the solid at the index specified, or returns None if the index is out of range.
 
         Returns:
@@ -318,7 +318,7 @@ class FMECompositeSolid(FMESolid, AppearanceMixin, TransformMixin, OrientMixin):
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -338,7 +338,7 @@ class FMECompositeSolid(FMESolid, AppearanceMixin, TransformMixin, OrientMixin):
             FMException: An exception is raised if an error occurs.
         """
     def orient(self, orientation: int) -> None: ...
-    def removeEndPart(self) -> FMESimpleSolid or None:
+    def removeEndPart(self) -> FMESimpleSolid | None:
         """Removes the last simple solid of this composite solid.
 
         If there are no solids in this composite, this method will return None.
@@ -366,7 +366,7 @@ class FMECompositeSolid(FMESolid, AppearanceMixin, TransformMixin, OrientMixin):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -435,7 +435,7 @@ class FMEBox(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin):
         Returns:
             FMEExtrusion: The Extrusion representation of this box.
         """
-    def getAsWireFrame(self) -> FMEMultiCurve or None:
+    def getAsWireFrame(self) -> FMEMultiCurve | None:
         """Returns the wireframe of the solid as a FMEMultiCurve.
 
         None is returned if a wireframe cannot be generated.
@@ -619,7 +619,7 @@ class FMEExtrusion(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
         Returns:
             FMEBRepSolid: The solid as a BRepSolid.
         """
-    def getAsWireFrame(self) -> FMEMultiCurve or None:
+    def getAsWireFrame(self) -> FMEMultiCurve | None:
         """Returns the wireframe of the solid as a FMEMultiCurve.
 
         None is returned if a wireframe cannot be generated.
@@ -646,10 +646,10 @@ class FMEExtrusion(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
             tuple[float,float,float]: The extrusion vector as an (x, y, z) tuple.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -695,7 +695,7 @@ class FMEExtrusion(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
 
@@ -772,7 +772,7 @@ class FMEBRepSolid(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
     def force3D(self, newZ: float) -> None: ...
     def getAppearanceReference(self, front: bool) -> int: ...
     def getArea(self) -> float: ...
-    def getAsWireframe(self) -> FMEMultiCurve or None:
+    def getAsWireframe(self) -> FMEMultiCurve | None:
         """Returns the outer wireframe of the solid.
 
         If the solid is not a closed solid, None is returned.
@@ -780,7 +780,7 @@ class FMEBRepSolid(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
         Returns:
             FMEMultiCurve: The outer wireframe of the solid.
         """
-    def getInnerSurfaceAt(self, index: int) -> FMESurface or None:
+    def getInnerSurfaceAt(self, index: int) -> FMESurface | None:
         """Returns the inner surface at the specified index.
 
         If the index is out of bounds, None is returned.
@@ -792,8 +792,8 @@ class FMEBRepSolid(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
             FMESurface: The inner surface at the specified index.
         """
     def getMeasureNames(self) -> tuple[str]: ...
-    def getName(self) -> text_type or None: ...
-    def getOuterSurface(self) -> FMESurface or None:
+    def getName(self) -> text_type | None: ...
+    def getOuterSurface(self) -> FMESurface | None:
         """Returns the outer surface of the solid.
 
         If the solid is not a closed solid, None is returned.
@@ -803,7 +803,7 @@ class FMEBRepSolid(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
         """
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -821,7 +821,7 @@ class FMEBRepSolid(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
         """
     def offset(self, offsetPoint: FMEPoint) -> None: ...
     def orient(self, orientation: int) -> None: ...
-    def removeLastInnerSurface(self) -> FMESurface or None:
+    def removeLastInnerSurface(self) -> FMESurface | None:
         """Removes the last inner surface of this boundary-representation solid.
 
         If there are no inner surfaces in this solid, this method will return None.
@@ -866,6 +866,6 @@ class FMEBRepSolid(FMESimpleSolid, AppearanceMixin, TransformMixin, OrientMixin)
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...

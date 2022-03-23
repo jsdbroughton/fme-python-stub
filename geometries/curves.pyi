@@ -53,7 +53,7 @@ class FMECurve(FMEGeometry, TransformMixin):
         Returns:
             FMELine: The curve as a FMELine object.
         """
-    def getEndPoint(self) -> FMEPoint or None:
+    def getEndPoint(self) -> FMEPoint | None:
         """Returns the end point of this curve.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -76,7 +76,7 @@ class FMECurve(FMEGeometry, TransformMixin):
         Returns:
             float: The length of the curve.
         """
-    def getStartPoint(self) -> FMEPoint or None:
+    def getStartPoint(self) -> FMEPoint | None:
         """Returns the start point of this curve.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -203,7 +203,7 @@ class FMEMultiCurve(FMEGeometry):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def getPartAt(self, index: int) -> FMECurve or None:
+    def getPartAt(self, index: int) -> FMECurve | None:
         """Returns the curve at the specified index.
 
         Args:
@@ -233,7 +233,7 @@ class FMEMultiCurve(FMEGeometry):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def removeLastPart(self) -> FMECurve or None:
+    def removeLastPart(self) -> FMECurve | None:
         """This removes and returns the last curve of the MultiCurve.
 
         If there are no curves in the MultiCurve, it will return None.
@@ -385,7 +385,7 @@ class FMEPath(FMECurve, TransformMixin):
         Returns:
             FMELine: The path as a as a FMELine object.
         """
-    def getEndPoint(self) -> FMEPoint or None:
+    def getEndPoint(self) -> FMEPoint | None:
         """Returns the end point of the path.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -408,7 +408,7 @@ class FMEPath(FMECurve, TransformMixin):
         Returns:
             float: The length of the path.
         """
-    def getPartAt(self, index: int) -> FMEArc or FMELine:
+    def getPartAt(self, index: int) -> FMEArc | FMELine:
         """This returns the part of the FMEPath at the given index.
 
         This returns None if the index is out of range.
@@ -420,7 +420,7 @@ class FMEPath(FMECurve, TransformMixin):
             FMEArc or FMELine: The FMESegment at the given index. Returns the
                 terminal geometry of the FMESegment, either a FMEArc or FMELine.
         """
-    def getStartPoint(self) -> FMEPoint or None:
+    def getStartPoint(self) -> FMEPoint | None:
         """Returns the start point of the path.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -468,7 +468,7 @@ class FMEPath(FMECurve, TransformMixin):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def removeEndPart(self) -> FMEArc or FMELine:
+    def removeEndPart(self) -> FMEArc | FMELine:
         """This removes the end FMESegment of the path.
 
         If there are no segments in the FMEPath, None is returned.
@@ -572,7 +572,7 @@ class FMESegment(FMECurve):
         Returns:
             FMELine: The segment as a line.
         """
-    def getEndPoint(self) -> FMEPoint or None:
+    def getEndPoint(self) -> FMEPoint | None:
         """Returns the end point of this curve.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -595,7 +595,7 @@ class FMESegment(FMECurve):
         Returns:
             float: The length of the segment.
         """
-    def getStartPoint(self) -> FMEPoint or None:
+    def getStartPoint(self) -> FMEPoint | None:
         """Returns the start point of this curve.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -750,7 +750,7 @@ class FMELine(FMESegment):
         Args:
             line (FMELine): The line to append
         """
-    def appendPoint(self, point: FMEPoint or tuple[float, float, float]) -> None:
+    def appendPoint(self, point: FMEPoint | tuple[float, float, float]) -> None:
         """Appends 'point' to the end of the existing line.
 
         Lines with no coordinates will have their dimension set based on the
@@ -806,7 +806,7 @@ class FMELine(FMESegment):
         Returns:
             (FMELine): The curve as a FMELine object.
         """
-    def getEndPoint(self) -> FMEPoint or None:
+    def getEndPoint(self) -> FMEPoint | None:
         """Returns the end point of the line.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -854,7 +854,7 @@ class FMELine(FMESegment):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def getStartPoint(self) -> FMEPoint or None:
+    def getStartPoint(self) -> FMEPoint | None:
         """Returns the start point of the line.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -936,7 +936,7 @@ class FMELine(FMESegment):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def removePointAt(self, index: int) -> FMEPoint or None:
+    def removePointAt(self, index: int) -> FMEPoint | None:
         """Removes the point at the specified 'index' and returns.
 
         Null is returned if the index is out of range.
@@ -1257,7 +1257,7 @@ class FMEArc(FMESegment):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def getEndPoint(self) -> FMEPoint or None:
+    def getEndPoint(self) -> FMEPoint | None:
         """Returns the end point of the arc.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -1326,9 +1326,9 @@ class FMEArc(FMESegment):
     def getPropertiesAsCentered(
         self,
         withEnds: bool,
-    ) -> tuple[
-        FMEPoint, float, float, float, float, float, FMEPoint, FMEPoint
-    ] or tuple[FMEPoint, float, float, float, float, float]:
+    ) -> tuple[FMEPoint, float, float, float, float, float, FMEPoint, FMEPoint] | tuple[
+        FMEPoint, float, float, float, float, float
+    ]:
         """Returns the arc properties.
 
         If 'withEnds' is True, the end points will be computed and returned.
@@ -1374,7 +1374,7 @@ class FMEArc(FMESegment):
         Returns:
             (float): The start angle of the arc.
         """
-    def getStartPoint(self) -> FMEPoint or None:
+    def getStartPoint(self) -> FMEPoint | None:
         """Returns the start point of the arc.
 
         An error is returned and None is returned if this curve has no point to return.
@@ -1615,8 +1615,8 @@ class FMEOrientedArc(FMESegment):
     def __init__(
         self,
         arc: FMEArc,
-        startCoord: tuple[float, float, float] or None,
-        endCoord: tuple[float, float, float] or None,
+        startCoord: tuple[float, float, float] | None,
+        endCoord: tuple[float, float, float] | None,
         transformationMatrix: list[list[float]],
     ) -> None:
         """Creates an oriented arc using an arc, a start coordinate, a end coordinate, and a transformation matrix.
@@ -1701,7 +1701,7 @@ class FMEOrientedArc(FMESegment):
     def getArea(self) -> float: ...
     def getAsLine(self) -> FMELine: ...
     def getAsLineFixedArcSamples(self, numSamples: int) -> FMELine: ...
-    def getEndPoint(self) -> FMEPoint or None: ...
+    def getEndPoint(self) -> FMEPoint | None: ...
     def getLength(self, threeD: bool) -> float: ...
     def getMeasureNames(self) -> tuple[str]: ...
     def getMeasureValues(self, measureName: str) -> tuple[float]:
@@ -1716,9 +1716,9 @@ class FMEOrientedArc(FMESegment):
         Raise:
             FMEException: An exception is raised if an error occurred.
         """
-    def getName(self) -> text_type or None: ...
-    def getStartPoint(self) -> FMEPoint or None: ...
-    def getTrait(self, traitName: str) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
+    def getStartPoint(self) -> FMEPoint | None: ...
+    def getTrait(self, traitName: str) -> text_type | None: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
     def getTransformationMatrix(self) -> list[list[float]]:
@@ -1792,7 +1792,7 @@ class FMEOrientedArc(FMESegment):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def setTransformationMatrix(self, transformationMatrix: list[list[float]]) -> None:
@@ -1955,7 +1955,7 @@ class FMEClothoid(FMESegment):
             (tuple[float,float]): The values of the named measure in the form
                 (start_point_value, end_point_value)
         """
-    def getName(self) -> text_type or None: ...
+    def getName(self) -> text_type | None: ...
     def getStartCurvature(self) -> float:
         """
         Returns the start curvature (in local coordinates) of the clothoid.
@@ -1970,10 +1970,10 @@ class FMEClothoid(FMESegment):
         Returns:
             (float): The start angle (in degrees of the local coordinates) of the clothoid.
         """
-    def getStartPoint(self) -> FMEPoint or None: ...
+    def getStartPoint(self) -> FMEPoint | None: ...
     def getTrait(
         self, traitName: str
-    ) -> bool or int or float or string_types or bytearray or bytes or None: ...  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None: ...  # type: ignore
     def getTraitNames(self) -> tuple[str]: ...
     def getTraitNullMissingAndType(self, traitName: str) -> tuple[bool, bool, int]: ...
     def getTraitType(self, traitName: str) -> int: ...
@@ -2048,9 +2048,7 @@ class FMEClothoid(FMESegment):
             xCoord (float): The X coordinate (in local coordinates) of the clothoid's start coordinate.
             yCoord (float): The Y coordinate (in local coordinates) of the clothoid's start coordinate.
         """
-    def setLocalStartCoordXYZ(
-        self, xCoord: float, yCoord: float, zCoord: float
-    ) -> None:
+    def setLocalStartCoordXYZ(self, xCoord: float, yCoord: float, zCoord: float) -> None:
         """
         Sets the XYZ (in local coordinates) of the clothoid's start coordinate.
 
@@ -2061,9 +2059,7 @@ class FMEClothoid(FMESegment):
             yCoord (float): The Y coordinate (in local coordinates) of the clothoid's start coordinate.
             zCoord (float): The Z coordinate (in local coordinates) of the clothoid's start coordinate.
         """
-    def setMeasure(
-        self, measureName: str, startPointValue: float, endPointValue: float
-    ) -> None:
+    def setMeasure(self, measureName: str, startPointValue: float, endPointValue: float) -> None:
         """
         Assign the given values to the specified measure. This will create the measure if it doesn't already exist.
 
@@ -2106,7 +2102,7 @@ class FMEClothoid(FMESegment):
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None: ...
     def setTraitNullWithType(self, traitName: str, traitType: int) -> None: ...
     def setTransformationMatrix(self, transformationMatrix: list[list[float]]) -> None:

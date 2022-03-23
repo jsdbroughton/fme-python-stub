@@ -156,7 +156,7 @@ class FMEGeometry:
                 FMECompositeSurface, this will return the union of all measure
                 names of all of its parts.
         """
-    def getName(self) -> text_type or None:
+    def getName(self) -> text_type | None:
         """This routine retrieves the 'name' of this geometry as a six.text_type.
 
         This will return None if it did not have a name associated with it.
@@ -167,7 +167,7 @@ class FMEGeometry:
     def getTrait(
         self,
         traitName: str,
-    ) -> bool or int or float or string_types or bytearray or bytes or None:  # type: ignore
+    ) -> bool | int | float | string_types | bytearray | bytes | None:  # type: ignore
         """Retrieves the geometry trait value of the specified trait name.
 
         Null trait values will be returned as an empty string.
@@ -313,7 +313,7 @@ class FMEGeometry:
     def setTrait(
         self,
         traitName: str,
-        traitValue: bool or int or float or text_type or bytearray or bytes,
+        traitValue: bool | int | float | text_type | bytearray | bytes,
     ) -> None:
         """Sets a geometry trait with the specified value.
 
@@ -428,7 +428,7 @@ class FMEAggregate(FMEGeometry):
         Returns:
             (int): The unique appearance reference for this appearance.
         """
-    def getGeometryDefinitionReference(self) -> int or None:
+    def getGeometryDefinitionReference(self) -> int | None:
         """This method will get the geometry definition reference associated with
         this aggregate, if this aggregate is a geometry instance.
 
@@ -438,7 +438,7 @@ class FMEAggregate(FMEGeometry):
         Returns:
             (int): The geometry definition reference, or None.
         """
-    def getGeometryInstanceLocalOrigin(self) -> list[list[float]] or None:
+    def getGeometryInstanceLocalOrigin(self) -> list[list[float]] | None:
         """This method retrieves the local origin associated with the geometry
         instance, if this aggregate is a geometry instance.
 
@@ -447,7 +447,7 @@ class FMEAggregate(FMEGeometry):
         Returns:
             (list[list[float]]): The local origin, formatted (ddd), or None.
         """
-    def getGeometryInstanceMatrix(self) -> list[list[float]] or None:
+    def getGeometryInstanceMatrix(self) -> list[list[float]] | None:
         """This method retrieves the geometry instance transformation matrix
         associated with the geometry instance, if this aggregate is a geometry
         instance.
@@ -471,7 +471,7 @@ class FMEAggregate(FMEGeometry):
             (bool): Returns True if the aggregate contains a multiple geometry
             and False otherwise.
         """
-    def getPartAt(self, index: int) -> FMEGeometry or None:
+    def getPartAt(self, index: int) -> FMEGeometry | None:
         """This method returns the geometry at the given index.
 
         None is returned if the index is out of range. For an aggregate with a
@@ -489,7 +489,7 @@ class FMEAggregate(FMEGeometry):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def getPartAtInLocalCoordinates(self, index: int) -> FMEGeometry or None:
+    def getPartAtInLocalCoordinates(self, index: int) -> FMEGeometry | None:
         """This method returns the geometry at the given index.
 
         None is returned if the index is out of range. For an aggregate with a
@@ -577,7 +577,7 @@ class FMEAggregate(FMEGeometry):
         Args:
             point (FMEPoint): The point to offset the coordinates of the geometry by.
         """
-    def removeLastPart(self) -> FMEGeometry or None:
+    def removeLastPart(self) -> FMEGeometry | None:
         """This removes and returns the last geometry of the aggregate.
 
         If there are no geometries in the aggregate, it will return None. Calling

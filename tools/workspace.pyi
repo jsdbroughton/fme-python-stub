@@ -35,7 +35,7 @@ class FMEDialog:
         Args:
             applicationName (str): The name of the application.
         """
-    def coordSysPrompt(self, coordSysName: str) -> str or None:
+    def coordSysPrompt(self, coordSysName: str) -> str | None:
         """This method displays a standard FME coordinate system dialog to prompt
         the user to choose a coordinate system.
 
@@ -50,8 +50,8 @@ class FMEDialog:
         self,
         defaultDestFormat: str,
         defaultDestDataset: str,
-        userDirectives: dict[str, str] or list[str],
-    ) -> tuple[str, str, list[str]] or None:
+        userDirectives: dict[str, str] | list[str],
+    ) -> tuple[str, str, list[str]] | None:
         """This method displays a dialog to prompt the user to choose a destination
         format and dataset.
 
@@ -99,9 +99,7 @@ class FMEDialog:
                 - METAFILE: The metafile name is in the next position.
                 - COORDSYS: The coordinate system is in the next position.
         """
-    def featTypeProperties(
-        self, format: str, source: bool, schemaFeat: FMEFeature
-    ) -> FMEFeature or None:
+    def featTypeProperties(self, format: str, source: bool, schemaFeat: FMEFeature) -> FMEFeature | None:
         """Bring up the feature type properties dialog on the given schema feature.
 
         Args:
@@ -139,7 +137,7 @@ class FMEDialog:
                 should be deleted from the disk. The workspace itself will not
                 exist until after the FME returns.
         """
-    def guessFormat(self, filename: str) -> str or None:
+    def guessFormat(self, filename: str) -> str | None:
         """This method attempts to guess the format based on the extension of the filename passed in.
 
         Args:
@@ -166,8 +164,8 @@ class FMEDialog:
         self,
         defaultSourceFormat: str,
         defaultSourceDataset: str,
-        userDirectives: dict[str, str] or list[str],
-    ) -> tuple[str, str, list[str]] or None:
+        userDirectives: dict[str, str] | list[str],
+    ) -> tuple[str, str, list[str]] | None:
         """This method displays a dialog to prompt the user to choose a source format and dataset.
 
         Args:
@@ -221,8 +219,8 @@ class FMEDialog:
         defaultSourceDataset: str,
         defaultDestFormat: str,
         defaultDestDataset: str,
-        userDirectives: dict[str, str] or list[str],
-    ) -> tuple[str, str, str, str, list[str]] or None:
+        userDirectives: dict[str, str] | list[str],
+    ) -> tuple[str, str, str, str, list[str]] | None:
         """This method displays a dialog to prompt the user to choose a source format, dataset, destination format and dataset.
 
         Args:

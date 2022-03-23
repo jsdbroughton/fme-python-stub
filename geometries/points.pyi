@@ -216,7 +216,7 @@ class FMEMultiPoint(FMEGeometry):
         Raises:
           FMEException: An exception is raised if an error occurs.
         """
-    def removeLastPart(self) -> FMEPoint or None:
+    def removeLastPart(self) -> FMEPoint | None:
         """This removes and returns the last point of the multi point.
 
         If there are no points in the multi point, it will return None.

@@ -50,9 +50,7 @@ class FMELogFile:
         Returns:
             (bool): True if there were held messages, otherwise False.
         """
-    def getMessage(
-        self, messageNumber: int, messageParameters: list[string_types]  # type: ignore
-    ) -> text_type:
+    def getMessage(self, messageNumber: int, messageParameters: list[string_types]) -> text_type:  # type: ignore
         """This method returns the message mapped from 'messageNumber' in
         FME_HOME/messages/fmemessages.fms.
 
@@ -114,9 +112,7 @@ class FMELogFile:
                 coordinates to output. A value of -1 means all coordinates will
                 be output.
         """
-    def logMessage(
-        self, messageNumber: int, parameters: list[string_types], severity: int  # type: ignore
-    ) -> None:
+    def logMessage(self, messageNumber: int, parameters: list[string_types], severity: int) -> None:  # type: ignore
         """Log a message to the logfile.
 
         Args:
@@ -193,7 +189,7 @@ class FMEException:
     """
 
     msgNum: int
-    def __init__(self, message: int or str, parms: list[str]) -> None:
+    def __init__(self, message: int | str, parms: list[str]) -> None:
         """Initialize self. See help(type(self)) for accurate signature.
 
         Args:

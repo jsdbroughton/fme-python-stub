@@ -51,7 +51,7 @@ class FMEText(FMEGeometry):
         Returns:
             (FMEText): An instance of a Text Geometry object.
         """
-    def getLocation(self, asPoint: bool) -> FMEGeometry or FMEPoint:
+    def getLocation(self, asPoint: bool) -> FMEGeometry | FMEPoint:
         """Returns the location of the text.
 
         Args:
@@ -121,9 +121,7 @@ class FMEText(FMEGeometry):
         Raises:
             FMEException: An exception is raised if an error occurs.
         """
-    def scale(
-        self, xScale: float, yScale: float, zScale: float, scaleText: bool
-    ) -> None:
+    def scale(self, xScale: float, yScale: float, zScale: float, scaleText: bool) -> None:
         """Scale the feature by the given amounts.
 
         'zScale' is ignored if the text object is 2D. An error is returned if
@@ -214,7 +212,7 @@ class FMEMultiText(FMEGeometry):
         Raises:
             FMEException: An exception is raised if an error occurs.
         """
-    def getPartAt(self, index: int) -> FMEText or None:
+    def getPartAt(self, index: int) -> FMEText | None:
         """Returns the text at the specified index.
 
         Args:
@@ -244,7 +242,7 @@ class FMEMultiText(FMEGeometry):
         Raises:
             FMEException: An exception is raised if an error occurs.
         """
-    def removeLastPart(self) -> FMEText or None:
+    def removeLastPart(self) -> FMEText | None:
         """This removes and returns the last text of the MultiText.
 
         If there are no texts in the MultiText, it will return None.
@@ -282,9 +280,7 @@ class FMEMultiText(FMEGeometry):
         Raises:
             FMEException: An exception is raised if an error occurs.
         """
-    def scaleXYZT(
-        self, xScale: float, yScale: float, zScale: float, scaleText: bool
-    ) -> None:
+    def scaleXYZT(self, xScale: float, yScale: float, zScale: float, scaleText: bool) -> None:
         """Scale the feature by the given amounts.
 
         'zScale' is ignored if the text object is 2D. An error is returned if

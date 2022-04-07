@@ -259,8 +259,23 @@ class FMEMultiCurve(FMEGeometry):
         """
 
 class FMEPath(FMECurve, TransformMixin):
-    """FME Path Class"""
+    """FME Path Class
 
+    Create an instance of a Path geometry object.
+
+    init(): Default FMEPath constructor.
+
+    init(path): Create a copy of the passed in Path geometry object.
+    """
+
+    @overload
+    def __init__(self) -> None:
+        """
+        Default FMEPath constructor.
+
+        Returns:
+            An instance of the FMEPath class."""
+    @overload
     def __init__(self, path: FMEPath) -> None:
         """Initializes a new instance of the FMEPath class.
 

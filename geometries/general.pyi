@@ -1,3 +1,4 @@
+from typing import overload
 from six import string_types, text_type
 from fmeobjects.features import FMEFeature
 from fmeobjects.geometries.points import FMEPoint
@@ -364,6 +365,14 @@ class FMENull(FMEGeometry):
 class FMEAggregate(FMEGeometry):
     """FME Aggregate Class"""
 
+    @overload
+    def __init__(self) -> None:
+        """Create an instance of an Aggregate geometry object.
+
+        Returns:
+            (FMEAggregate): An instance of a Aggregate Geometry object.
+        """
+    @overload
     def __init__(self, aggregate: FMEAggregate) -> None:
         """Create a copy of the passed in Aggregate geometry object.
 

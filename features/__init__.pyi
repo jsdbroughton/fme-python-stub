@@ -1021,3 +1021,6 @@ kFME_FeatureDeserializeSidecarBasename: int
 # General Processing Operations
 kFME_ConvertToArea: int
 kFME_PolygonDissolve: int
+
+kFMEFeatureTypeAttr: str
+"""fme_feature_type"""

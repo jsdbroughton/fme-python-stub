@@ -338,7 +338,7 @@ class FMEPath(FMECurve, TransformMixin):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def extendToPointsXY(self, coords: list[tuple[float]]) -> None:
+    def extendToPointsXY(self, coords: list[tuple[float, float]]) -> None:
         """Extend the path to a list of points.
 
         If this method is called on a 3D path, a Z value of 0.0 will be used for
@@ -350,7 +350,7 @@ class FMEPath(FMECurve, TransformMixin):
         Raises:
             FMEException: An exception is raised if an error occurred.
         """
-    def extendToPointsXYZ(self, coords: list[tuple[float]]) -> None:
+    def extendToPointsXYZ(self, coords: list[tuple[float, float, float]]) -> None:
         """Extend the path to a list of points.
 
         If this method is called on a 2D path, the path will be forced to 3D with

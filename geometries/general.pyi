@@ -40,7 +40,7 @@ class FMEGeometry:
             (tuple[tuple[float]]): The bounding cube of the Geometry, in the
                 form ((minx, miny, minz), (maxx, maxy, maxz)).
         """
-    def bounds(self) -> tuple[FMEPoint]:
+    def bounds(self) -> tuple[FMEPoint, FMEPoint]:
         """Returns the bounds of the mesh.
 
         Returns:

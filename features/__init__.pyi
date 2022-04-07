@@ -309,8 +309,8 @@ class FMEFeature:
     def getAttribute(
         self,
         attrName: str,
-        desiredType: type,
-        fallback: bool | int | float | str | bytes | bytearray | list[Any] | None,  # ignore
+        desiredType: type = str,
+        fallback: bool | int | float | str | bytes | bytearray | list[Any] | None = "",  # ignore
     ) -> bool | int | float | str | bytes | bytearray | list[Any] | None:
         """Get the value of an attribute.
 

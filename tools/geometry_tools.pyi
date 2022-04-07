@@ -91,7 +91,7 @@ class FMEGeometryTools:
             applyOnlyIfShearExists (bool): If true, the transformation is only
                 applied if the surface has a shear.
         """
-    def calculateVertexNormal(self, repairOnlyMissing: bool, repairType: int, geom: FMEGeometry) -> None:
+    def calculateVertexNormals(self, repairOnlyMissing: bool, repairType: int, geom: FMEGeometry) -> None:
         """This method returns None if vertex normals are repaired on the geometry
         or if there is nothing to repair.
 
